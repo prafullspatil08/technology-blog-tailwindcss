@@ -32,7 +32,6 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp(){
-    debugger
     if(this.signupForm?.status == 'VALID'){
       this.api.signUp(this.signupForm?.value).subscribe((res:any)=> {
         this.errorMessage.type = 'success'

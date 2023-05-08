@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { async } from 'rxjs';
 import { ApiService } from 'src/app/common/service/api.service';
 
 @Component({
@@ -39,16 +40,15 @@ export class SignInComponent implements OnInit {
             return a.email === this.signInForm.value.email && a.password === this.signInForm.value.password;
           });
           if(user){
-            this.errorMessage.type = 'success'
             this.errorMessage.message = "Login Suceessfully"
-            setInterval(()=>{
+            this.errorMessage.type = 'success'
+             setTimeout(()=>{
+              this.errorMessage = []
               localStorage.setItem("user",JSON.stringify(response));
               localStorage.setItem("isLoggedIn",'true');
               this.router.navigate(['/posts']);
-              this.api.isLoggedIn.next(true)
-              this.errorMessage = []
             },700)
-          
+            this.api.isLoggedIn.next(true)
           }else{
             this.errorMessage.type = 'danger'
             this.errorMessage.message = "Invalid Creadiatials"
