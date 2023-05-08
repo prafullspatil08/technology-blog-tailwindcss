@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-alert-message',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./alert-message.component.scss']
 })
 export class AlertMessageComponent {
-
+  @Input() type:any;
+  @Input() message:any;
 }
