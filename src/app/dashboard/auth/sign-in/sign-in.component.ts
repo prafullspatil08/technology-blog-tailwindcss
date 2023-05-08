@@ -50,11 +50,14 @@ export class SignInComponent implements OnInit {
             },700)
           
           }else{
+            this.errorMessage.type = 'danger'
+            this.errorMessage.message = "Invalid Creadiatials"
             this.router.navigate(['/sign-in']);
           }
         },
         error: (err: any) => {
-          console.error(err);
+          this.errorMessage.type = 'danger'
+          this.errorMessage.message = "Internal Server Error";
         },
       });
     }else{

@@ -13,4 +13,9 @@ export class ApiService {
   login(){
     return this.http.get(APIEndPoint.ENDPOINT_URL + 'users');
   }
+
+  signUp(payload:any){
+    console.log("hii",payload);
+    return this.http.post(APIEndPoint.ENDPOINT_URL + 'users', payload);
+  }
 }
