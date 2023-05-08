@@ -15,6 +15,10 @@ export class SignInComponent implements OnInit {
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*^?&\.])[A-Za-z\d@#$!%*^?&\.]{8,15}$/;
   emailPattern: any =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  errorMessage:any = {
+    type:'', message: ''
+
+  };
   constructor(private _fb: FormBuilder, private api: ApiService, private router: Router) {}
   ngOnInit(): void {
     this.signInForm = this._fb.group({
@@ -36,10 +40,16 @@ export class SignInComponent implements OnInit {
             return a.email === this.signInForm.value.email && a.password === this.signInForm.value.password;
           });
           if(user){
-            localStorage.setItem("user",JSON.stringify(response));
-            localStorage.setItem("isLoggedIn",'true');
-            this.router.navigate(['/posts']);
-            this.api.isLoggedIn.next(true)
+            this.errorMessage.type = 'success'
+            this.errorMessage.message = "Login Suceessfully"
+            setInterval(()=>{
+              localStorage.setItem("user",JSON.stringify(response));
+              localStorage.setItem("isLoggedIn",'true');
+              this.router.navigate(['/posts']);
+              this.api.isLoggedIn.next(true)
+              this.errorMessage = []
+            },700)
+          
           }else{
             this.router.navigate(['/sign-in']);
           }
@@ -48,6 +58,9 @@ export class SignInComponent implements OnInit {
           console.error(err);
         },
       });
+    }else{
+      this.errorMessage.type = 'danger'
+      this.errorMessage.message = "Please Enter Valid Details";
     }
   }
 }

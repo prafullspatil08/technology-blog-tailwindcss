@@ -25,4 +25,6 @@
     </form>
 </div>
 
-<app-alert-message [type]="'danger'" [message]="'Login successfully'"></app-alert-message>
+<ng-container *ngIf="errorMessage?.type != undefined && errorMessage?.message != undefined">
+<app-alert-message [type]="errorMessage?.type" [message]="errorMessage?.message"></app-alert-message>
+</ng-container>
