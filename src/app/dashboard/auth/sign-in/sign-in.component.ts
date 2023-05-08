@@ -27,7 +27,6 @@ export class SignInComponent implements OnInit {
         '',
         [Validators.required, Validators.pattern(this.passwordPattern)],
       ],
-      isRemember: [false],
     });
   }
 
