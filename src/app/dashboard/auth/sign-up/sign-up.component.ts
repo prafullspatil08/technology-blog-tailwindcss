@@ -36,11 +36,14 @@ export class SignUpComponent implements OnInit {
       this.api.signUp(this.signupForm?.value).subscribe((res:any)=> {
         this.errorMessage.type = 'success'
         this.errorMessage.message = "User Register Suceessfully"
-        setInterval(()=>{
+        setTimeout(()=>{
           this.signupForm.reset({});
           this.router.navigate(['/sign-in']);
           this.errorMessage = []
         },700)
+      }, (error:any)=> {
+        this.errorMessage.type = 'danger'
+        this.errorMessage.message = "Internal Server Error";
       })
     }else{
       this.errorMessage.type = 'danger'
