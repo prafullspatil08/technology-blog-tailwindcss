@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { PostComponent } from './posts/post/post.component';
+import { AddPostComponent } from './posts/add-post/add-post.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'posts', pathMatch: 'full' },
       { path: 'post', component: PostComponent },
+      { path: 'add-post', component: AddPostComponent },
       { path: 'dashboard', component: PostComponent },
       { path: 'about-us', component: PostComponent },
       { path: 'profile', component: PostComponent },

@@ -8,6 +8,7 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostComponent } from './posts/post/post.component';
+import { AddPostComponent } from './posts/add-post/add-post.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PostComponent } from './posts/post/post.component';
     DashboardComponent,
     SignInComponent,
     SignUpComponent,
-    PostComponent
+    PostComponent,
+    AddPostComponent
   ],
   imports: [
     CommonModule,
