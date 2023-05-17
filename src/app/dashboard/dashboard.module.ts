@@ -9,6 +9,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostComponent } from './posts/post/post.component';
 import { AddPostComponent } from './posts/add-post/add-post.component';
+import { PostDetailsComponent } from './posts/post-details/post-details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AddPostComponent } from './posts/add-post/add-post.component';
     SignInComponent,
     SignUpComponent,
     PostComponent,
-    AddPostComponent
+    AddPostComponent,
+    PostDetailsComponent,
   ],
   imports: [
     CommonModule,

@@ -5,6 +5,7 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { PostComponent } from './posts/post/post.component';
 import { AddPostComponent } from './posts/add-post/add-post.component';
+import { PostDetailsComponent } from './posts/post-details/post-details.component';
 
 const routes: Routes = [
   {
@@ -12,14 +13,15 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: '', redirectTo: 'posts', pathMatch: 'full' },
+      { path: 'sign-in', component: SignInComponent },
+      { path: 'sign-up', component: SignUpComponent },
       { path: 'post', component: PostComponent },
       { path: 'add-post', component: AddPostComponent },
+      { path: ':id/post-details', component: PostDetailsComponent },
       { path: 'dashboard', component: PostComponent },
       { path: 'about-us', component: PostComponent },
       { path: 'profile', component: PostComponent },
       { path: 'help', component: PostComponent },
-      { path: 'sign-in', component: SignInComponent },
-      { path: 'sign-up', component: SignUpComponent },
     ],
   },
 ];
