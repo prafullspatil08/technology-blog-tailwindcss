@@ -6,6 +6,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { PostComponent } from './posts/post/post.component';
 import { AddPostComponent } from './posts/add-post/add-post.component';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
+import { AddPostGuard } from '../common/guard/add-post.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
       { path: 'sign-in', component: SignInComponent },
       { path: 'sign-up', component: SignUpComponent },
       { path: 'post', component: PostComponent },
-      { path: 'add-post', component: AddPostComponent },
+      { path: 'add-post', canActivate: [AddPostGuard], component: AddPostComponent },
       { path: ':id/post-details', component: PostDetailsComponent },
       { path: 'dashboard', component: PostComponent },
       { path: 'about-us', component: PostComponent },

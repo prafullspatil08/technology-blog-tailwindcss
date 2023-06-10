@@ -15,7 +15,14 @@ export class ApiService {
   }
 
   signUp(payload:any){
-    console.log("hii",payload);
     return this.http.post(APIEndPoint.ENDPOINT_URL + 'users', payload);
+  }
+
+  getBlog(){
+    return this.http.get(APIEndPoint.ENDPOINT_URL + 'blogs');
+  }
+
+  postBlog(payload:any){
+    return this.http.post(APIEndPoint.ENDPOINT_URL + 'blogs',payload);
   }
 }
