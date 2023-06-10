@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "firstName": "Prafull",
+      "lastName": "Patil",
+      "phoneNo": "8482850810",
+      "email": "prafullpatil@gmail.com",
+      "password": "Aman@123",
+      "id": 1
+    },
+    {
+      "email": "aman@gmail.com",
+      "password": "Aman@32",
+      "phone_no": "8482850810",
+      "id": 2
+    },
+    {
+      "email": "sanket@gmail.com",
+      "password": "Sanket@32",
+      "phone_no": "1234567890",
+      "id": 3
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Java Programming",
+      "author": "Aman Patil",
+      "description": "This is Test Blog",
+      "publish_date": "2023-06-10T10:48:14.701Z",
+      "techType": "Java",
+      "id": "ca8wvJ-"
+    },
+    {
+      "title": "JavaScript Programming with unit testing",
+      "author": "Ashish",
+      "description": "This one is for JavaScript",
+      "publish_date": "2023-06-10T10:52:03.085Z",
+      "techType": "Javascript",
+      "id": "q1SwT1F"
+    },
+    {
+      "title": "Java Prograaming ",
+      "author": "Aman",
+      "description": "This java Programmming blog Please Read it",
+      "publish_date": "2023-06-10T12:21:38.518Z",
+      "techType": "Java",
+      "id": "ffsthyt"
+    }
+  ]
+}
