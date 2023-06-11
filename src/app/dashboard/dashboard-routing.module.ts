@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'posts', pathMatch: 'full' },
       { path: 'sign-in', component: SignInComponent },
       { path: 'sign-up', component: SignUpComponent },
-      { path: 'post', component: PostComponent },
+      { path: 'posts', component: PostComponent },
       { path: 'add-post', canActivate: [AddPostGuard], component: AddPostComponent },
       { path: ':id/post-details', component: PostDetailsComponent },
       { path: 'dashboard', component: PostComponent },

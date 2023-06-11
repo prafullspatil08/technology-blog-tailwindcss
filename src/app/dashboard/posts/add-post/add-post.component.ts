@@ -34,7 +34,7 @@ export class AddPostComponent implements OnInit {
          setTimeout(()=>{
           this.errorMessage = []
           localStorage.setItem("post",JSON.stringify(this.addPostForm.value));
-          this.router.navigate(['/post']);
+          this.router.navigate(['/posts']);
         },700)
       } )
     }else{

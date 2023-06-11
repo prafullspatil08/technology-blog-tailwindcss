@@ -45,6 +45,22 @@
       "publish_date": "2023-06-10T12:21:38.518Z",
       "techType": "Java",
       "id": "ffsthyt"
+    },
+    {
+      "title": "Python Programming",
+      "author": "Aman",
+      "description": "This was Python Prograamming",
+      "publish_date": "2023-06-11T15:37:27.944Z",
+      "techType": "Python",
+      "id": "lI8qsC8"
+    },
+    {
+      "title": "C++",
+      "author": "Aman",
+      "description": "C++",
+      "publish_date": "2023-06-11T15:40:31.804Z",
+      "techType": "C++",
+      "id": "Yv92dfR"
     }
   ]
 }
