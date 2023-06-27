@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostComponent } from './posts/post/post.component';
 import { AddPostComponent } from './posts/add-post/add-post.component';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { PostDetailsComponent } from './posts/post-details/post-details.componen
     PostComponent,
     AddPostComponent,
     PostDetailsComponent,
+    DashboardPageComponent,
   ],
   imports: [
     CommonModule,
