@@ -9,16 +9,21 @@ import { ApiService } from 'src/app/common/service/api.service';
 })
 export class PostDetailsComponent implements OnInit {
   blogDetails:any;
+  blogDescription: any = []
+  isLoggedIn:boolean = false
   constructor(private route:ActivatedRoute, private api:ApiService){}
   ngOnInit(): void {
     let blogId = this.route.snapshot.params['id'];
     this.getBlogDetails(blogId);
+    this.api.isLoggedIn.subscribe((res:any)=>{
+      this.isLoggedIn = res;
+    })
   }
 
   getBlogDetails(blogId:any){
     this.api.getBlogById(blogId).subscribe((res:any)=>{
       this.blogDetails = res;
-      console.log('this.blogDetails: ', this.blogDetails);
+      this.blogDescription = this.blogDetails.description.split('.');
     })
   }
 }
