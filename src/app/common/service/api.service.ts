@@ -25,4 +25,8 @@ export class ApiService {
   postBlog(payload:any){
     return this.http.post(APIEndPoint.ENDPOINT_URL + 'blogs',payload);
   }
+
+  getBlogById(id:any){
+    return this.http.get(APIEndPoint.ENDPOINT_URL + 'blogs/'+ id);
+  }
 }
