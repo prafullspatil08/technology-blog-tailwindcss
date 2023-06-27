@@ -11,6 +11,9 @@ import { PostComponent } from './posts/post/post.component';
 import { AddPostComponent } from './posts/add-post/add-post.component';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HelpSupportComponent } from './help-support/help-support.component';
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
     AddPostComponent,
     PostDetailsComponent,
     DashboardPageComponent,
+    AboutUsComponent,
+    ProfileComponent,
+    HelpSupportComponent,
   ],
   imports: [
     CommonModule,
