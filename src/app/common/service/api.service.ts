@@ -29,4 +29,8 @@ export class ApiService {
   getBlogById(id:any){
     return this.http.get(APIEndPoint.ENDPOINT_URL + 'blogs/'+ id);
   }
+
+  saveComment(payload){
+    return this.http.post(APIEndPoint.ENDPOINT_URL + 'comment/', payload);
+  }
 }
