@@ -46,7 +46,7 @@ export class SignInComponent implements OnInit {
               this.errorMessage = []
               localStorage.setItem("user",JSON.stringify(response));
               localStorage.setItem("isLoggedIn",'true');
-              this.router.navigate(['/post']);
+              this.router.navigate(['/posts']);
             },700)
             this.api.isLoggedIn.next(true)
           }else{

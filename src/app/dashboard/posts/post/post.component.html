@@ -10,26 +10,26 @@
 <div class="grid mt-4 grid-cols-2 md:grid-cols-3 gap-4">
   <div
     *ngFor="let blog of blogData"
-    routerLink="/{{ blog.id }}/post-details"
     class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
   >
-    <a class="mt-5">
+    <a class="mt-5" routerLink="/{{ blog.id }}/post-details">
       <img class="rounded-t-lg" [src]="blog.imgSrc" alt="" />
     </a>
     <div class="p-5">
       <a>
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          class="mb-2 truncate max-w-lg text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
         >
           {{ blog.title }}
         </h5>
       </a>
-      <p class="mb-3 whitespace-nowrap overflow-x-hidden font-normal text-gray-700 dark:text-gray-400">
+      <p class="mb-3 truncate max-w-lg whitespace-nowrap overflow-x-hidden font-normal text-gray-700 dark:text-gray-400">
         {{ blog.description }}
       </p>
       <a
         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      >
+        routerLink="/{{ blog.id }}/post-details"
+        >
         Read more
         <svg
           aria-hidden="true"
@@ -47,4 +47,7 @@
       </a>
     </div>
   </div>
+</div>
+<div class="text-center" *ngIf="blogData?.length == 0 || blogData == undefined">
+  No Data Found
 </div>

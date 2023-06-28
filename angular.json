@@ -31,10 +31,11 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/css/flowbite.min.css"
+              "src/assets/css/tailwind.min.css"
             ],
             "scripts": [
-              "src/assets/js/flowbite.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/tailwind.js"
             ]
           },
           "configurations": {

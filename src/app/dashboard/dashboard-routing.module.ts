@@ -7,6 +7,10 @@ import { PostComponent } from './posts/post/post.component';
 import { AddPostComponent } from './posts/add-post/add-post.component';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
 import { AddPostGuard } from '../common/guard/add-post.guard';
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HelpSupportComponent } from './help-support/help-support.component';
 
 const routes: Routes = [
   {
@@ -16,13 +20,13 @@ const routes: Routes = [
       { path: '', redirectTo: 'posts', pathMatch: 'full' },
       { path: 'sign-in', component: SignInComponent },
       { path: 'sign-up', component: SignUpComponent },
-      { path: 'post', component: PostComponent },
+      { path: 'posts', component: PostComponent },
       { path: 'add-post', canActivate: [AddPostGuard], component: AddPostComponent },
       { path: ':id/post-details', component: PostDetailsComponent },
-      { path: 'dashboard', component: PostComponent },
-      { path: 'about-us', component: PostComponent },
-      { path: 'profile', component: PostComponent },
-      { path: 'help', component: PostComponent },
+      { path: 'dashboard', component: DashboardPageComponent },
+      { path: 'about-us', component: AboutUsComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'help', component: HelpSupportComponent },
     ],
   },
 ];
