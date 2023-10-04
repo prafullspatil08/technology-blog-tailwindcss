@@ -1,27 +1,52 @@
-# TechnologyBlog
+This project is a simple Angular application that uses Firebase authentication and Firebase Realtime database. It allows users to log in with their Google account and view a list of credentials stored in Firebase.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Technologies Used
 
-## Development server
+Angular
+Firebase
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Angular CLI
+Firebase CLI
+How to Use
 
-## Code scaffolding
+Clone the repository:
+git clone <repository_url>
+Install the dependencies:
+npm install
+Start the development server:
+ng serve
+Open a web browser and navigate to http://localhost:4200.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Click the "Log In with google" button and log in with your Google account.
 
-## Build
+Once you are logged in, you will be able to see a list of data stored in Firebase.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Authentication
 
-## Running unit tests
+This project uses Firebase authentication to allow users to log in with their Google account. To log in, simply click the "Log In with google" button and enter your Google credentials.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Data Retrieval
 
-## Running end-to-end tests
+This project uses the Firebase store to retrieve data from Firebase. The data is stored in a collection called users & credentials. 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Example
 
-## Further help
+The following code shows how to retrieve all of the data from the users collection:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+    return new Promise<any>((resolve)=> {
+      this.db.collection('credentials').valueChanges({ idField: 'id' }).subscribe(users => resolve(users));
+    })
+Once you have retrieved the data, you can display it in your Angular application using the *ngFor directive. For example, the following code displays a list of all of the users in the users collection:
+
+HTML
+<ul>
+  <li *ngFor="let credential of credentials">
+    {{ credential.name }}
+  </li>
+</ul>
+Use code with caution. Learn more
+Conclusion
+
+This is a simple example of how to use Angular and Firebase to create a web application. You can use this project as a starting point to build your own Angular applications with Firebase authentication and Firebase Store.
