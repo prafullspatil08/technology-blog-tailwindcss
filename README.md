@@ -1,46 +1,46 @@
+# Password Manager
 This project is a simple Angular application that uses Firebase authentication and Firebase Realtime database. It allows users to log in with their Google account and view a list of credentials stored in Firebase.
 
-Technologies Used
+## Technologies Used
 
-Angular
-Firebase
+`Angular`
+`Firebase`
 
-Angular CLI
-Firebase CLI
-How to Use
+`Angular CLI`
+`Firebase CLI`
 
-Clone the repository:
-git clone <repository_url>
-Install the dependencies:
-npm install
+## How to Use
+
+## Clone the repository:
+git clone <git@github.com:rushikesh-salunke/password-manager.git>
+## Install the dependencies:
+`npm install`
 Start the development server:
-ng serve
-Open a web browser and navigate to http://localhost:4200.
+`ng serve`
+Open a web browser and navigate to `http://localhost:4200.`
 
-Click the "Log In with google" button and log in with your Google account.
+Click the `Log In with google` button and log in with your Google account.
 
 Once you are logged in, you will be able to see a list of data stored in Firebase.
 
-Authentication
+## Authentication
 
-This project uses Firebase authentication to allow users to log in with their Google account. To log in, simply click the "Log In with google" button and enter your Google credentials.
+This project uses Firebase authentication to allow users to log in with their Google account. To log in, simply click the `Log In with google` button and enter your Google credentials.
 
-Data Retrieval
+## Data Retrieval
 
 This project uses the Firebase store to retrieve data from Firebase. The data is stored in a collection called users & credentials. 
 
-Example
+## Example
 
 The following code shows how to retrieve all of the data from the users collection:
-
-
 
     return new Promise<any>((resolve)=> {
       this.db.collection('credentials').valueChanges({ idField: 'id' }).subscribe(users => resolve(users));
     })
 Once you have retrieved the data, you can display it in your Angular application using the *ngFor directive. For example, the following code displays a list of all of the users in the users collection:
 
-HTML
+## HTML
 <ul>
   <li *ngFor="let credential of credentials">
     {{ credential.name }}
